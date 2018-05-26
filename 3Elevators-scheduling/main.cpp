@@ -14,16 +14,24 @@ int nl[4] = { 0 };
 // void dispatch2(int n[][], int row, int col);
 // void dispatch2(vector<vector<int>> &n);
 
-int main()
+int main(int argc,char *argv[])
 {
-	ifstream infile("input1.txt");
+	FILE * output1, *output2, *output3,*input1;
 	ofstream outfile1("output1.txt");
 	ofstream outfile2("output2.txt");
 	ofstream  outfile3("output3.txt");
-  	//freopen("input.txt", "r", stdin);
-	//freopen("output.txt", "w", stdout);
-	//ofstream outFile;
-	//elevector lift1, lift2, lift3;//Èý²¿µçÌÝ£»
+	ifstream infile("input1.txt");
+	if (argc == 3)
+	{
+		infile = ifstream(argv[1]);
+	}
+	if (argc == 5)
+	{
+		infile = ifstream(argv[1]);
+		outfile1 = ofstream(argv[2]);
+		outfile2 = ofstream(argv[3]);
+		outfile3 = ofstream(argv[4]);
+	}
 	int n, i;
 	int temp0=0, temp1=0, temp3=0;
 	infile >> n;
